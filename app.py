@@ -5,7 +5,7 @@ from transformers import pipeline, AutoTokenizer, AutoModelForSeq2SeqLM
 
 @st.cache_resource
 def load_models():
-    summarizer = pipeline("summarization", model="facebook/bart-large-cnn")
+    summarizer = pipeline("summarization", model="sshleifer/distilbart-cnn-12-6")
     mcq_tokenizer = AutoTokenizer.from_pretrained("MBZUAI/LaMini-T5-738M")
     mcq_model = AutoModelForSeq2SeqLM.from_pretrained("MBZUAI/LaMini-T5-738M")
     return summarizer, mcq_tokenizer, mcq_model
